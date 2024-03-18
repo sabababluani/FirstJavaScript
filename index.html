@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Georgian:wght@100..900&display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="ima">
+    <title>Novado</title>
+</head>
+
+<body>
+    <header>
+        <div class="header">
+            <img src="./images/Logo (4).png">
+        </div>
+    </header>
+    <main>
+        <div class="main">
+            <input type="text" id="input--box" placeholder="ცხოვრების რა ნაწილის დაგეგმვა გსურს?">
+            <button onclick="addButton()" id="addButton">დამატება <img src="./images/Layer 1.png"></button>
+        </div>
+        <div class="container">
+            <div class="container--flex">
+                <div class="container--blue">
+                    <span>დავალებები</span>
+                    <div class="container--count--home">
+                        <p></p>
+                    </div>
+                </div>
+                <div class="container--purple">
+                    <span>დასრულებული</span>
+                    <div class="container--count--done">
+                        <p>0/5</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="wrapper">
+            <div class="wrapper--child">
+                <img src="./images/Clipboard.png">
+                <h2>დავალებები ჯერ არ გაქვთ</h2>
+                <p>შექმენით დავალებები და დაიწყეთ თქვენი ცხოვრების დაორგანიზება
+                    ჩვენთან ერთად</p>
+            </div>
+        </div>
+        <ul class="section">
+            <li>
+                <!-- <div class="section--container">
+                    <div class="section__inner--photo">
+                        <img src="./images/uncheck.png">
+                    </div>
+                    <p></p>
+                    <img onclick="removeButton()" src="./images/layer 1 (1).png">
+                </div> -->
+            </li>
+        </ul>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>
