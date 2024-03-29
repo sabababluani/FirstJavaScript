@@ -1,31 +1,58 @@
 const wrapperChild = document.querySelector('.wrapper--child')
-const inputBox = document.getElementById('input--box')
-const sectonUlParent = document.querySelector('.section')
-const sectonUl = document.querySelector('.section--container')
-const innnerPhoto = document.querySelector('.section__inner--photo')
+let trash = document.querySelectorAll('.trash')
+let add = document.getElementById('addButton')
+let container = document.querySelector('.section')
+let newTemplate = document.getElementById('taskDivTemplate')
+let finishedTemplate = document.getElementById('finishedTaskDivTemplate')
+let input = document.getElementById('input--box')
+let counterOne = document.querySelector('.davalebebi')
+let counterTwo = document.querySelector('.dasrulebuli')
+let checkbox = document.querySelectorAll('.check')
+let done = 0
 
 
-function addButton() {
- 
-    if (addButton) {
-        wrapperChild.remove()
-        let li = document.createElement("li")
-        li.innerHTML = ` <div class="section--container">
-        <div class="section__inner--photo">
-            <img src="./images/uncheck.png">
-        </div>
-        <p>${inputBox.value}</p>
-        <img onclick="removeButton()" src="./images/layer 1 (1).png">
-    </div>`
-        sectonUlParent.appendChild(li)
+function addbutton() {
+    wrapperChild.remove()
+    let newDiv = newTemplate.cloneNode(true)
+    container.appendChild(newDiv)
+    newDiv.querySelector('.trash').addEventListener('click', deleteDiv)
+    newDiv.querySelector('.check').addEventListener('click', finishTask)
+    newDiv.style.display = 'flex'
+    newDiv.querySelector('.flexOne').value = input.value
+    input.value = ''
+    counterOne.value++
+    changeStats()
+}
 
+function deleteDiv(e) {
+    e.target.parentElement.remove()
+    counterOne.value--
+    if (e.target.parentElement.classList.value == 'finished__section--container') {
+        done--
     }
-    inputBox.value = ''
+    changeStats()
+
 }
 
 
-function removeButton() {
-    if (addButton && removeButton) {
-        sectonUl.remove()
+function finishTask(e) {
+    if (!e.target.classList.contains('finished__section--container')) {
+        e.target.classList.remove('not__section--container');
+        e.target.classList.add('finished__section--container');
+        done++;
+    } else {
+        e.target.classList.remove('finished__section--container');
+        e.target.classList.add('not__section--container');
+        done--;
     }
+    changeStats();
 }
+
+
+function changeStats() { counterTwo.value = `${done} / ${counterOne.value}` }
+
+
+trash.forEach(trash => { trash.addEventListener('click', deleteDiv) })
+checkbox.forEach(checkbox => { checkbox.addEventListener('click', finishTask) })
+
+

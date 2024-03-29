@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
+    
 }
 
 li,
@@ -119,11 +119,15 @@ body {
     width: 35px;
 }
 
-.container--count--home p,
-.container--count--done p {
+.container--count--home input,
+.container--count--done input {
     color: #FFF;
     font-size: 12px;
     font-weight: 700;
+    background-color: transparent;
+    border: none;
+    position: relative;
+    left: 79px;
 }
 
 .container--blue,
@@ -183,7 +187,6 @@ body {
 }
 
 .section--container {
-    flex-basis: 736px;
     height: 56px;
     background-color: #262626;
     display: flex;
@@ -196,6 +199,37 @@ body {
     color: #F2F2F2;
 }
 
+.section--container input {
+    background-color: transparent;
+    border: none;
+}
+
+.finished__section--container {
+    background-color: #262626;
+    border: 1px solid #262626;
+    border-radius: 8px;
+    padding: 12.2px 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: Noto Sans Georgian;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #808080;
+    text-decoration-line: line-through;
+    text-decoration-color: #808080;
+}
+
+.finished__section--container input{
+    color: #808080;
+    text-decoration-line: line-through;
+}
+
+#finishedTaskDivTemplate {display: none;}
+#taskDivTemplate {display: none;}
+
 .section--container img {
     padding-left: 16px;
 }
@@ -207,6 +241,21 @@ body {
     cursor: pointer;
 }
 
+.not__section--container {
+    background-color: #262626;
+    border: 1px solid #333333;
+    border-radius: 8px;
+    padding: 12.2px 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: Noto Sans Georgian;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #ffffff;
+}
 
 @media screen and (min-width:768px) and (max-width:1023px) {
     .section {
